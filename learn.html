@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Tutor — Learn to Solve</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="learn.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Method guide · Quiz Tutor</p>
+      <h1>Seekhte hain <span>·</span> sahi jawab kaise nikaalein</h1>
+      <p class="lede">Ye page <strong>seekhne</strong> ke liye hai, quiz ke liye nahi. Har question type ka tareeqa, ek worked example, aur “agar galat chuna to kya socha tha” — sab easy Roman Urdu mein, technical terms English mein.</p>
+      <ul class="meta">
+        <li><strong>4</strong> methods</li>
+        <li><strong>Worked examples</strong> with corrections</li>
+        <li><strong>Try-it</strong> exercises</li>
+        <li>English terms, Roman Urdu explanation</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Sections">
+    <div class="wrap nav-inner">
+      <div class="nav-links">
+        <a href="#table">Tabular</a>
+        <a href="#percent">Percentage</a>
+        <a href="#multi">Multiple answers</a>
+        <a href="#scenario">Scenario</a>
+        <a href="#checklist">Checklist</a>
+        <a href="index.html">← Practice bank</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="table" class="block">
+      <div class="section-head">
+        <span class="kicker">Method 01</span>
+        <h2>Tabular question — table kaise parhein</h2>
+        <p class="section-intro">Table wale question mein jawab table ke <em>andar</em> hota hai, options mein nahi. Pehle table ko todho, phir options dekho.</p>
+      </div>
+
+      <ol class="method">
+        <li><strong>Header parho.</strong> Rows kya represent karti hain, columns kya — ye clear karo.</li>
+        <li><strong>Derived values nikaalo.</strong> Statements test karne se pehle har row ka cost/person, hours saved ya total compute karo.</li>
+        <li><strong>Statement ko table se match karo,</strong> yaad se nahi. Har sentence ke liye alag se check karo.</li>
+        <li><strong>“Who sees it next” column dhyan se.</strong> Final decision ke baad koi named human judge na ho to wo step delegate nahi hota.</li>
+        <li><strong>Gross vs net</strong> aur <strong>header row</strong> mat bhoolo — ye do sabse common traps hain.</li>
+      </ol>
+
+      <article class="worked">
+        <h3>Worked example</h3>
+        <p class="q-text">Ek office ne AI tool try kiya. Staff time $25/hour hai. Net monthly saving kya hai?</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Measure</th><th>Hand-written</th><th>With tool</th></tr></thead>
+            <tbody>
+              <tr><td>Reports per month</td><td>40</td><td>40</td></tr>
+              <tr><td>Hours per month</td><td>120 h</td><td>44 h</td></tr>
+              <tr><td>Tool cost</td><td>$0</td><td>$400</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul class="opts-list">
+          <li>A. 76 hours saved, <strong>$1,500 net</strong></li>
+          <li>B. 76 hours saved, $1,900 net</li>
+          <li>C. 120 hours saved, $3,000 net</li>
+          <li>D. Tool costs more than it saves</li>
+        </ul>
+
+        <div class="solution">
+          <h4>Hal — step by step</h4>
+          <ol>
+            <li>Hours saved = 120 − 44 = <strong>76 h</strong>.</li>
+            <li>Gross value = 76 × $25 = <strong>$1,900</strong>.</li>
+            <li>Net = $1,900 − $400 tool cost = <strong>$1,500</strong>.</li>
+            <li>Isliye <strong>A</strong> sahi hai.</li>
+          </ol>
+          <p class="correction"><strong>Agar aapne B chuna:</strong> aapne gross ko net samjha — tool cost nikatna zaroori tha. <strong>C</strong> mein “before” hours ko saving mana gaya. <strong>D</strong> isliye galat kyunki $1,500 bachat hai, nuksaan nahi.</p>
+        </div>
+      </article>
+
+      <div class="try-box">
+        <h3>Try it</h3>
+        <p>North: 40 staff, $10,000. South: 25 staff, $7,500. East: 35 staff, $7,000. Kaunse region ka cost/person sabse zyada hai?</p>
+        <button type="button" class="reveal" data-target="tr1">Jawab dekho</button>
+        <div class="tiny-answer" id="tr1" hidden><p>North = $250, South = $300, East = $200 → <strong>South</strong>. Pehle har row ka per-person nikaalo, phir compare karo.</p></div>
+      </div>
+    </section>
+
+    <section id="percent" class="block">
+      <div class="section-head">
+        <span class="kicker">Method 02</span>
+        <h2>Percentage question — sahi base kaise pakdein</h2>
+        <p class="section-intro">Percentage ka 90% hisa <strong>base</strong> ka sahi hona hai. Galat base = galat jawab, calculation sahi ho bhi to.</p>
+      </div>
+
+      <ol class="method">
+        <li><strong>Part aur Whole pehchano.</strong> Formula: <code>Percent = Part ÷ Whole × 100</code>. Whole wahi hai jis ki baat ho rahi hai.</li>
+        <li><strong>Change ho to:</strong> <code>(New − Old) ÷ Old × 100</code> — base hamesha <em>old</em>.</li>
+        <li><strong>Percent vs percentage points:</strong> 4% → 6% matlab <strong>+2 points</strong>, lekin relative badhotri <strong>+50%</strong> (2 ÷ 4).</li>
+        <li><strong>Net nikaalo:</strong> gross saving − tool cost − review cost. Har chhupa hua cost uthao.</li>
+        <li><strong>“About 98%” ya 99.97% bina source ke</strong> — trust mat karo. Data se compute karo aur method readable rakho.</li>
+        <li><strong>Survey mein non-users not asked</strong> to unke saath comparison karna <em>unsupported</em> hai.</li>
+      </ol>
+
+      <article class="worked">
+        <h3>Worked example</h3>
+        <p class="q-text">600 log survey kiye gaye. 150 ne app use kiya. App users mein se 80% ne “good” rating di. Non-users se poocha hi nahi gaya. Kaunsi baat <strong>galat/support nahi</strong> hai?</p>
+        <ol class="opts-list styled">
+          <li>1. 25% logon ne app use kiya.</li>
+          <li>2. 120 app users ne “good” rating di.</li>
+          <li>3. App users ne non-users se better rating di.</li>
+          <li>4. 120 / 600 = 20%.</li>
+        </ol>
+        <div class="solution">
+          <h4>Hal — har option check karo</h4>
+          <ol>
+            <li>150 ÷ 600 = 25% → statement 1 <strong>sahi</strong>.</li>
+            <li>80% × 150 = 120 → statement 2 <strong>sahi</strong>.</li>
+            <li>Non-users se poocha hi nahi → comparison possible hi nahi → statement 3 <strong>unsupported</strong> = jawab.</li>
+            <li>120 ÷ 600 = 20% → statement 4 <strong>sahi</strong>.</li>
+          </ol>
+          <p class="correction"><strong>Agar aapne 4 chuna:</strong> aapne 120 ko 150 ki jagah base bana diya ya ulta kar diya. Yaad rakho: rating app users ki thi to percentage bhi <em>unhi</em> par nikalni thi; jab “sab surveyed” poocho tab 600 base hoga.</p>
+        </div>
+      </article>
+
+      <div class="try-box">
+        <h3>Try it</h3>
+        <p>Error rate 3% se badh kar 4.5% hua. Percentage points aur relative increase kya hain?</p>
+        <button type="button" class="reveal" data-target="tr2">Jawab dekho</button>
+        <div class="tiny-answer" id="tr2" hidden><p><strong>+1.5 percentage points</strong> (4.5 − 3) aur <strong>+50% relative</strong> (1.5 ÷ 3 = 0.5). “1.5% relative” bolna galat hai.</p></div>
+      </div>
+    </section>
+
+    <section id="multi" class="block">
+      <div class="section-head">
+        <span class="kicker">Method 03</span>
+        <h2>Multiple-answer question — “Select TWO” kaise tackle karein</h2>
+        <p class="section-intro">Galti aksar yahan hoti hai: pehla sahi option milte hi ruk jaate hain. Har option ko <strong>alone</strong> decide karo.</p>
+      </div>
+
+      <ol class="method">
+        <li><strong>Har option ko independently TRUE/FALSE likho.</strong> Ek ka result doosre par depend nahi karta.</li>
+        <li><strong>“Select TWO”</strong> ka matlab exactly do. “All that apply” mein jitne sahi ho utne chuno.</li>
+        <li><strong>NOT / EXCEPT</strong> wale question mein ulta chuno — jo sahi nahi hai wo answer hai.</li>
+        <li><strong>“Always / never / cannot / automatically”</strong> jaise words warning hote hain — rule todte hain.</li>
+        <li><strong>Akhir mein count check karo:</strong> do chune? phir submit.</li>
+      </ol>
+
+      <article class="worked">
+        <h3>Worked example — Select TWO</h3>
+        <p class="q-text">Connectors ke baare mein kaunse do baatein sahi hain?</p>
+        <ul class="opts-list styled">
+          <li>A. Connectors search aur read kar sakte hain.</li>
+          <li>B. Permissions se send action add ho sakta hai.</li>
+          <li>C. Claude draft banata hai, human send karta hai.</li>
+          <li>D. Summary mein “posted” likha hai to post ho gaya.</li>
+          <li>E. Least privilege ka matlab poora drive access dena hai.</li>
+        </ul>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th>Option</th><th>True / False</th><th>Kyun</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td><strong>TRUE</strong></td><td>Connector actions search/read tak limited hain.</td></tr>
+              <tr><td>B</td><td>FALSE</td><td>Send connector ke actions mein nahi — permission se nahi badhta.</td></tr>
+              <tr><td>C</td><td><strong>TRUE</strong></td><td>Draft agent, send human — yahi rule hai.</td></tr>
+              <tr><td>D</td><td>FALSE</td><td>Sentence hai, event nahi. Inbox/page check karo.</td></tr>
+              <tr><td>E</td><td>FALSE</td><td>Least privilege = sirf wo folder jo runs use karte hain.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="solution">
+          <h4>Jawab: A aur C</h4>
+          <p class="correction"><strong>Agar aapne B ya D chuna:</strong> B mein aapne connector ko likhne/send karne wala mana — ye course rule ke khilaf hai. D mein aapne summary ko proof mana — “emailed and posted” bina connector ke sirf ek claim hai. E ulta hai: least privilege access <em>chhota</em> karta hai, bada nahi.</p>
+        </div>
+      </article>
+
+      <div class="try-box">
+        <h3>Try it</h3>
+        <p>“Select TWO”: kaunse do <strong>report karne chahiye</strong>? A) Free tool khola, customer list dikh gaya, paste nahi kiya. B) Data unapproved tool mein paste ho gaya. C) Vague request. D) Purana Skill version.</p>
+        <button type="button" class="reveal" data-target="tr3">Jawab dekho</button>
+        <div class="tiny-answer" id="tr3" hidden><p><strong>A aur B.</strong> A near miss hai (report karo), B incident hai (report karo — kya, kahan route, kab). C aur D report karne wale events nahi; unka fix alag hai.</p></div>
+      </div>
+    </section>
+
+    <section id="scenario" class="block">
+      <div class="section-head">
+        <span class="kicker">Method 04</span>
+        <h2>Scenario question — “kaunsa sawal sahi hai” kaise decide karein</h2>
+        <p class="section-intro">Scenario mein jawab hona nahi hota — <em>rule</em> hota hai. Keyword pakdo, rule lagao, rule todne wale options hata do.</p>
+      </div>
+
+      <ol class="method">
+        <li><strong>Keywords circle karo:</strong> gate, near miss, incident, stale, vague, unreachable, read-only, “emailed and posted”, prototype.</li>
+        <li><strong>Keyword → concept map karo</strong> (upar wale concept cards se): gate → Governance, stale → Skill, vague owner → Fluency.</li>
+        <li><strong>Rule apply karo:</strong> kya human judge hai? data bahar gaya? owner available? reversibility kya hai?</li>
+        <li><strong>Rule todne wale options hatana:</strong> “guess kar do”, “gate skip karo”, “agent khud approve kare” — ye hamesha galat.</li>
+        <li><strong>“What should you do NEXT”</strong> ka matlab pehla <em>safe</em> step chuno, perfect final answer nahi.</li>
+      </ol>
+
+      <article class="worked">
+        <h3>Worked example 1 — vague + owner unreachable</h3>
+        <p class="q-text">Request vague hai aur owner se contact nahi ho raha. Options: A) Guess kar ke deliver karo. B) Report, reader, frequency, data, format likho aur open items hold karo. C) Web agent ko de do. D) Wait karo.</p>
+        <div class="solution">
+          <h4>Kaise pata chala</h4>
+          <ol>
+            <li>Keywords: <strong>vague</strong> + <strong>unreachable</strong> → Fluency.</li>
+            <li>Rule: ambiguity owner ke bina resolve nahi hoti — spec likho, open items hold.</li>
+            <li>A rule todta hai (guess), C owner ka faisla agent ko deta hai, D koi action nahi.</li>
+            <li>Isliye <strong>B</strong> sahi.</li>
+          </ol>
+          <p class="correction"><strong>Agar aapne C chuna:</strong> web agent research kar sakta hai, par wo owner ki jagah requirement decide nahi kar sakta. “Delegate it” ka matlab hai clear task + human checker, ambiguity ka matlab nahi.</p>
+        </div>
+      </article>
+
+      <article class="worked">
+        <h3>Worked example 2 — near miss ya incident</h3>
+        <p class="q-text">Kisi ne free online tool khola, customer list screen par thi, par paste karne se pehle tool band kar diya. Kya hai?</p>
+        <div class="solution">
+          <h4>Kaise pata chala</h4>
+          <ol>
+            <li>Keyword: <strong>opened + closed before pasting</strong> → koi data bahar nahi gaya.</li>
+            <li>Par exposure chance se bacha — ye <strong>near miss</strong> hai, report karo.</li>
+            <li>Incident tab hota jab data paste ho jata — usme kya, kahan route, kab batana hota.</li>
+          </ol>
+          <p class="correction"><strong>Agar aapne “kuch nahi hua” chuna:</strong> risk theek se band hua ye achhi baat hai, par system ko pata hi nahi chalega to dobara hoga. Isliye near miss bhi report hota hai.</p>
+        </div>
+      </article>
+
+      <div class="try-box">
+        <h3>Try it</h3>
+        <p>Summary mein likha hai “notice emailed and posted”, par koi email/posting connector hai hi nahi. Agla step kya?</p>
+        <button type="button" class="reveal" data-target="tr4">Jawab dekho</button>
+        <div class="tiny-answer" id="tr4" hidden><p>Ye <strong>sentence hai, event nahi</strong>. Pehle inbox/page check karo, phir agar nahi hua to khud karo. Connector ke bina agent ne send nahi kiya.</p></div>
+      </div>
+    </section>
+
+    <section id="checklist" class="block">
+      <div class="section-head">
+        <span class="kicker">Quick reference</span>
+        <h2>Exam se pehle 10-second checklist</h2>
+      </div>
+      <div class="checklist">
+        <div><span>1</span><p>Table: header → rows → per-row value → statement.</p></div>
+        <div><span>2</span><p>Cost/person = spend ÷ staff. Average = total ÷ total.</p></div>
+        <div><span>3</span><p>Hours saved = before − after. Net = gross − cost.</p></div>
+        <div><span>4</span><p>Percent = Part ÷ Whole. Base kabhi ulta mat karo.</p></div>
+        <div><span>5</span><p>Points ≠ percent: 4%→6% = +2 points, +50% relative.</p></div>
+        <div><span>6</span><p>“About X%” bina data ke = compute karo, trust mat karo.</p></div>
+        <div><span>7</span><p>Select TWO: har option T/F alag se, phir count.</p></div>
+        <div><span>8</span><p>NOT/EXCEPT = ulta chuno.</p></div>
+        <div><span>9</span><p>Scenario: keyword → concept → rule → rule todne wale options hatana.</p></div>
+        <div><span>10</span><p>Hamesha poora reason bana kar option chuno — sirf “sahi lagta hai” nahi.</p></div>
+      </div>
+      <p class="back-link"><a href="index.html">← Ab practice bank par jao (22 questions, answers reveal ke saath)</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><p>Learn to Solve · Roman Urdu explanations with English technical terms · Practice bank: index.html</p></div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.reveal').forEach(button => {
+      button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.target);
+        target.hidden = !target.hidden;
+        button.textContent = target.hidden ? 'Jawab dekho' : 'Jawab chhupao';
+      });
+    });
+  </script>
+</body>
+</html>

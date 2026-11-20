@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Tutor — Practice Bank</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Panaversity Certified Associate Foundations</p>
+      <h1>Quiz Tutor <span>·</span> Practice Bank</h1>
+      <p class="lede">New questions built from the same concepts as your study material — tables, quadrants, percentages and scenario MCQs. Read the concept briefs first, then answer one question at a time.</p>
+      <ul class="meta">
+        <li><strong>22</strong> questions</li>
+        <li><strong>6</strong> topics</li>
+        <li><strong>3</strong> difficulty levels</li>
+        <li><strong>Answer key hidden</strong> until you finish</li>
+      </ul>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="Page sections">
+    <div class="wrap nav-inner">
+      <div class="nav-links">
+        <a href="#concepts">Concepts</a>
+        <a href="#tabular">Tabular</a>
+        <a href="#quadrant">Quadrant</a>
+        <a href="#percentage">Percentage</a>
+        <a href="#conceptual">Conceptual</a>
+        <a href="#answer-key">Answer key</a>
+      </div>
+      <div class="filters" role="group" aria-label="Filter by difficulty">
+        <button type="button" class="filter active" data-filter="all">All</button>
+        <button type="button" class="filter" data-filter="easy">Easy</button>
+        <button type="button" class="filter" data-filter="medium">Medium</button>
+        <button type="button" class="filter" data-filter="hard">Hard</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="concepts" class="block">
+      <div class="section-head">
+        <span class="kicker">Read this first</span>
+        <h2>How, when &amp; why each concept is used</h2>
+        <p class="section-intro">These short briefs come before the questions on purpose. Knowing the purpose of a concept makes the right option obvious when you meet it inside a scenario.</p>
+      </div>
+
+      <div class="concept-grid">
+        <article class="concept-card">
+          <h3>Governance</h3>
+          <dl>
+            <dt>How</dt><dd>Set rules before work starts: approval gates, least-privilege access, what must be reported, and who owns the final decision.</dd>
+            <dt>When</dt><dd>Before delegating anything sensitive, whenever data leaves the organisation, or when a new rule arrives mid-chat.</dd>
+            <dt>Why</dt><dd>Keeps accountability with a human and turns near misses and incidents into reportable, fixable events instead of silent mistakes.</dd>
+          </dl>
+        </article>
+        <article class="concept-card">
+          <h3>Workflow</h3>
+          <dl>
+            <dt>How</dt><dd>Break a process into steps; for each step record the output and who sees it next. Delegate only steps whose output a named human reviews.</dd>
+            <dt>When</dt><dd>Designing a repeatable process, mapping last week's work onto a run map, or checking whether a control still exists.</dd>
+            <dt>Why</dt><dd>Makes safe delegation visible and exposes steps that have no checker after them.</dd>
+          </dl>
+        </article>
+        <article class="concept-card">
+          <h3>Fluency</h3>
+          <dl>
+            <dt>How</dt><dd>Name the report, reader, frequency, data and format; prototype early and refine from feedback; restart from a summary when context overloads.</dd>
+            <dt>When</dt><dd>Requests are vague, the owner is unreachable, or the user can only say what they want after seeing a first version.</dd>
+            <dt>Why</dt><dd>Removes ambiguity and rework before an agent acts on the wrong assumption.</dd>
+          </dl>
+        </article>
+        <article class="concept-card">
+          <h3>Just Delegate It</h3>
+          <dl>
+            <dt>How</dt><dd>Hand off tasks with clear inputs, outputs and a human checker; keep final decisions and irreversible sends with people.</dd>
+            <dt>When</dt><dd>A task repeats, has a gate downstream, and can be bounded by clear instructions.</dd>
+            <dt>Why</dt><dd>Gains speed without giving up control over high-stakes outcomes.</dd>
+          </dl>
+        </article>
+        <article class="concept-card">
+          <h3>General Agents on the Web</h3>
+          <dl>
+            <dt>How</dt><dd>Use agents with search/read connectors to gather public information and draft outputs, then verify claims against source data.</dd>
+            <dt>When</dt><dd>Research, monitoring, or collecting information across sites before a human decides.</dd>
+            <dt>Why</dt><dd>Scales information gathering — but “emailed and posted” is only a sentence unless a connector actually did it.</dd>
+          </dl>
+        </article>
+        <article class="concept-card">
+          <h3>Skills &amp; Connectors</h3>
+          <dl>
+            <dt>How</dt><dd>Put reusable procedures in Skills, reference facts in Project knowledge, rules in Project instructions; grant Connectors only the access actually used.</dd>
+            <dt>When</dt><dd>A procedure recurs, content is stale, or a live system must be read.</dd>
+            <dt>Why</dt><dd>Reduces context overload, keeps one source of truth, and limits damage from over-broad permissions.</dd>
+          </dl>
+        </article>
+      </div>
+    </section>
+
+    <section id="tabular" class="block">
+      <div class="section-head">
+        <span class="kicker">Question type 01</span>
+        <h2>Tabular questions</h2>
+      </div>
+      <aside class="type-brief">
+        <h3>How / when / why this type is used</h3>
+        <dl>
+          <dt>How</dt><dd>Read the header first, decide what rows and columns mean, compute per-row values before testing statements, then compare.</dd>
+          <dt>When</dt><dd>Tables of costs, time, delegation maps, run logs or baselines appear.</dd>
+          <dt>Why</dt><dd>Most traps come from a wrong base, a missed header row, gross vs net, or forgetting the review column.</dd>
+        </dl>
+      </aside>
+
+      <div class="questions">
+        <article class="q" data-difficulty="easy" data-topic="Workflow">
+          <header class="q-head"><span class="qnum">T1</span><span class="badge">Workflow</span><span class="badge lvl easy">Easy</span></header>
+          <p class="q-text">A team wants to delegate parts of invoice processing to Claude. The rule is: a step may go to Claude when a named human judges its output next; a final decision or update with no human judge afterwards stays with a person.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>#</th><th>Step</th><th>Output</th><th>Who sees it next</th></tr></thead>
+              <tbody>
+                <tr><td>1</td><td>Extract invoice lines</td><td>Draft table</td><td>Accounts assistant verifies</td></tr>
+                <tr><td>2</td><td>Approve payment over $500</td><td>Final decision</td><td>Nobody — final</td></tr>
+                <tr><td>3</td><td>Draft supplier email</td><td>Email text</td><td>Procurement lead reviews</td></tr>
+                <tr><td>4</td><td>Post journal entry</td><td>Ledger update</td><td>Nobody — final</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="q-text">Which steps can be delegated to Claude?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-T1" value="A"><span>A. 1 and 3</span></label>
+            <label><input type="radio" name="q-T1" value="B"><span>B. 2 and 4</span></label>
+            <label><input type="radio" name="q-T1" value="C"><span>C. 1 only</span></label>
+            <label><input type="radio" name="q-T1" value="D"><span>D. 3 and 4</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Governance">
+          <header class="q-head"><span class="qnum">T2</span><span class="badge">Governance</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">A trainer reviews spending across three regions.</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Region</th><th>Staff</th><th>Training spend</th></tr></thead>
+              <tbody>
+                <tr><td>North</td><td>40</td><td>$10,000</td></tr>
+                <tr><td>South</td><td>25</td><td>$7,500</td></tr>
+                <tr><td>East</td><td>35</td><td>$7,000</td></tr>
+                <tr><td><strong>Total</strong></td><td><strong>100</strong></td><td><strong>$24,500</strong></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ol class="statements">
+            <li>North has 40% of the staff.</li>
+            <li>Cost per person is highest in South.</li>
+            <li>South and East spent the same total.</li>
+            <li>Average cost per person company-wide is $245.</li>
+          </ol>
+          <p class="q-text">Which statement is inaccurate?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-T2" value="A"><span>A. 1 only</span></label>
+            <label><input type="radio" name="q-T2" value="B"><span>B. 2 only</span></label>
+            <label><input type="radio" name="q-T2" value="C"><span>C. 3 only</span></label>
+            <label><input type="radio" name="q-T2" value="D"><span>D. 4 only</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="hard" data-topic="Workflow">
+          <header class="q-head"><span class="qnum">T3</span><span class="badge">Workflow</span><span class="badge lvl hard">Hard</span></header>
+          <p class="q-text">An office compares writing reports by hand with using an AI tool. Staff time is valued at $30/hour. Which statement about the monthly change is correct?</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Measure</th><th>Hand-written</th><th>With tool</th></tr></thead>
+              <tbody>
+                <tr><td>Reports per month</td><td>60</td><td>60</td></tr>
+                <tr><td>Drafting time per report</td><td>2.5 h</td><td>1 h</td></tr>
+                <tr><td>Review time per report</td><td>None</td><td>0.5 h</td></tr>
+                <tr><td>Tool cost per month</td><td>None</td><td>$500</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-T3" value="A"><span>A. Saves 90 hours and $2,200 net</span></label>
+            <label><input type="radio" name="q-T3" value="B"><span>B. Saves 60 hours and $1,300 net</span></label>
+            <label><input type="radio" name="q-T3" value="C"><span>C. Saves 60 hours and $1,800 net</span></label>
+            <label><input type="radio" name="q-T3" value="D"><span>D. Costs more than it saves</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Governance">
+          <header class="q-head"><span class="qnum">T4</span><span class="badge">Governance</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">A baseline table records how work was done before automation. Each old figure should be backed by a record. Which old figure is only an estimate?</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th>Old-way measure</th><th>Record that proves it</th></tr></thead>
+              <tbody>
+                <tr><td>Time per run</td><td>Email timestamps</td></tr>
+                <tr><td>Revision rounds per run</td><td>No earlier versions were kept</td></tr>
+                <tr><td>Hand steps per run</td><td>Bench checklist</td></tr>
+                <tr><td>Bench corrections</td><td>Bench log</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-T4" value="A"><span>A. Time per run</span></label>
+            <label><input type="radio" name="q-T4" value="B"><span>B. Revision rounds per run</span></label>
+            <label><input type="radio" name="q-T4" value="C"><span>C. Hand steps per run</span></label>
+            <label><input type="radio" name="q-T4" value="D"><span>D. Bench corrections</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="hard" data-topic="Workflow">
+          <header class="q-head"><span class="qnum">T5</span><span class="badge">Workflow</span><span class="badge lvl hard">Hard</span></header>
+          <p class="q-text">A weekly run log is uploaded with 321 lines including a header. The code reads 320 rows. Lapsed rows still carry an amount. The code's December total is $2,100 but the hand figure is $1,750; the year total is $14,000 and the tool reports "no error". What is the right next step?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-T5" value="A"><span>A. Trust the code — "no error" means correct</span></label>
+            <label><input type="radio" name="q-T5" value="B"><span>B. Ask to see the rows behind December's $2,100</span></label>
+            <label><input type="radio" name="q-T5" value="C"><span>C. Recount: 321 − 1 is not 320, so the row count is wrong</span></label>
+            <label><input type="radio" name="q-T5" value="D"><span>D. Report an incident immediately</span></label>
+          </fieldset>
+        </article>
+      </div>
+    </section>
+
+    <section id="quadrant" class="block">
+      <div class="section-head">
+        <span class="kicker">Question type 02</span>
+        <h2>Quadrant-based questions</h2>
+      </div>
+      <aside class="type-brief">
+        <h3>How / when / why this type is used</h3>
+        <dl>
+          <dt>How</dt><dd>Name both axes, place the scenario on each axis, then read the resulting box and its required action.</dd>
+          <dt>When</dt><dd>A scenario involves two competing factors, here <em>stakes</em> and <em>reversibility</em>.</dd>
+          <dt>Why</dt><dd>It forces a deliberate level of checking instead of treating every task the same.</dd>
+        </dl>
+        <p class="note"><strong>Note:</strong> your source PDFs contain no course-defined quadrant framework. The 2×2 used below (stakes × reversibility) is a <strong>practice construct</strong>, not a framework from the book.</p>
+      </aside>
+
+      <div class="questions">
+        <article class="q" data-difficulty="medium" data-topic="Governance">
+          <header class="q-head"><span class="qnum">Q1</span><span class="badge">Governance</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">Using the practice 2×2 of <strong>stakes</strong> (low/high) × <strong>reversibility</strong> (reversible/irreversible), where does this sit: a draft pricing note to a long-term client; a follow-up can correct it easily and the financial impact is small?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-Q1" value="A"><span>A. Low stakes + reversible → light check</span></label>
+            <label><input type="radio" name="q-Q1" value="B"><span>B. High stakes + irreversible → mandatory gate</span></label>
+            <label><input type="radio" name="q-Q1" value="C"><span>C. Low stakes + irreversible → human gate</span></label>
+            <label><input type="radio" name="q-Q1" value="D"><span>D. High stakes + reversible → no check needed</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="hard" data-topic="Just Delegate It">
+          <header class="q-head"><span class="qnum">Q2</span><span class="badge">Just Delegate It</span><span class="badge lvl hard">Hard</span></header>
+          <p class="q-text">An agent is set to auto-post a public safety recall notice. The impact is high and the post cannot be unsent. Which quadrant and action apply?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-Q2" value="A"><span>A. Low stakes + reversible → let it run</span></label>
+            <label><input type="radio" name="q-Q2" value="B"><span>B. High stakes + irreversible → mandatory human gate before sending</span></label>
+            <label><input type="radio" name="q-Q2" value="C"><span>C. High stakes + reversible → review afterwards</span></label>
+            <label><input type="radio" name="q-Q2" value="D"><span>D. Low stakes + irreversible → add a disclaimer</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="easy" data-topic="Fluency">
+          <header class="q-head"><span class="qnum">Q3</span><span class="badge">Fluency</span><span class="badge lvl easy">Easy</span></header>
+          <p class="q-text">In a practice 2×2 of <strong>request clarity</strong> (clear/vague) × <strong>owner availability</strong> (available/unreachable), what should you do when the request is vague and the owner cannot be reached?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-Q3" value="A"><span>A. Guess the format and proceed</span></label>
+            <label><input type="radio" name="q-Q3" value="B"><span>B. Delegate to a web agent to find the answer</span></label>
+            <label><input type="radio" name="q-Q3" value="C"><span>C. List report, reader, frequency, data and format; hold open items until confirmed</span></label>
+            <label><input type="radio" name="q-Q3" value="D"><span>D. Skip the task</span></label>
+          </fieldset>
+        </article>
+      </div>
+    </section>
+
+    <section id="percentage" class="block">
+      <div class="section-head">
+        <span class="kicker">Question type 03</span>
+        <h2>Percentage-based questions</h2>
+      </div>
+      <aside class="type-brief">
+        <h3>How / when / why this type is used</h3>
+        <dl>
+          <dt>How</dt><dd>Identify Part and Whole, compute with the right base, then check percent vs percentage points and gross vs net.</dd>
+          <dt>When</dt><dd>Headlines, survey excerpts, rates, savings or “about X%” claims appear.</dd>
+          <dt>Why</dt><dd>A figure a decision rests on must be computed from data with a readable method — never a paragraph estimate.</dd>
+        </dl>
+      </aside>
+
+      <div class="questions">
+        <article class="q" data-difficulty="easy" data-topic="Fluency">
+          <header class="q-head"><span class="qnum">P1</span><span class="badge">Fluency</span><span class="badge lvl easy">Easy</span></header>
+          <p class="q-text">A survey reports: 800 customers surveyed; 200 used the app; 75% of app users rated it “good”; non-users were not asked. Which summary is <strong>unsupported</strong>?</p>
+          <ol class="statements">
+            <li>A quarter of those surveyed used the app.</li>
+            <li>150 app users rated it good.</li>
+            <li>App users rated it higher than non-users.</li>
+            <li>150 of all surveyed is about 19%.</li>
+          </ol>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-P1" value="A"><span>A. 1 only</span></label>
+            <label><input type="radio" name="q-P1" value="B"><span>B. 2 only</span></label>
+            <label><input type="radio" name="q-P1" value="C"><span>C. 3 only</span></label>
+            <label><input type="radio" name="q-P1" value="D"><span>D. 4 only</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Governance">
+          <header class="q-head"><span class="qnum">P2</span><span class="badge">Governance</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">A report says “about 98% of requests are on time”. The system data shows 1,240 on-time requests out of 1,300. A decision depends on this figure. Which number should the decision rest on?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-P2" value="A"><span>A. 98% — it is the published headline</span></label>
+            <label><input type="radio" name="q-P2" value="B"><span>B. 95.4% computed from the system data, with the method readable</span></label>
+            <label><input type="radio" name="q-P2" value="C"><span>C. Either one — they are close enough</span></label>
+            <label><input type="radio" name="q-P2" value="D"><span>D. Neither — percentages never support decisions</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="hard" data-topic="Fluency">
+          <header class="q-head"><span class="qnum">P3</span><span class="badge">Fluency</span><span class="badge lvl hard">Hard</span></header>
+          <p class="q-text">An error rate rises from 3% to 4.5% after a process change. What is the correct description of the change?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-P3" value="A"><span>A. +1.5 percentage points, and a +50% relative increase</span></label>
+            <label><input type="radio" name="q-P3" value="B"><span>B. +1.5 percentage points, and a +1.5% relative increase</span></label>
+            <label><input type="radio" name="q-P3" value="C"><span>C. +50 percentage points, and a +50% relative increase</span></label>
+            <label><input type="radio" name="q-P3" value="D"><span>D. +1.5%, and a +150% relative increase</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Workflow">
+          <header class="q-head"><span class="qnum">P4</span><span class="badge">Workflow</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">An automation saves $2,400 of staff time per month. The tool costs $900/month and adds 10 hours of review at $40/hour. What is the net monthly saving?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-P4" value="A"><span>A. $1,100</span></label>
+            <label><input type="radio" name="q-P4" value="B"><span>B. $1,500</span></label>
+            <label><input type="radio" name="q-P4" value="C"><span>C. $2,000</span></label>
+            <label><input type="radio" name="q-P4" value="D"><span>D. $900</span></label>
+          </fieldset>
+        </article>
+      </div>
+    </section>
+
+    <section id="conceptual" class="block">
+      <div class="section-head">
+        <span class="kicker">Question type 04</span>
+        <h2>Conceptual MCQs</h2>
+      </div>
+      <aside class="type-brief">
+        <h3>How / when / why this type is used</h3>
+        <dl>
+          <dt>How</dt><dd>Map keywords in the scenario to course concepts (gate, near miss, Skill, connector, prototype) and eliminate options that break a rule.</dd>
+          <dt>When</dt><dd>Scenario questions, single-correct MCQs, or “what should you do next” questions.</dd>
+          <dt>Why</dt><dd>Tests understanding of the rule behind the answer, not memorised wording.</dd>
+        </dl>
+      </aside>
+
+      <div class="questions">
+        <article class="q" data-difficulty="easy" data-topic="Skills &amp; Connectors">
+          <header class="q-head"><span class="qnum">C1</span><span class="badge">Skills &amp; Connectors</span><span class="badge lvl easy">Easy</span></header>
+          <p class="q-text">A site map that agents may quote as a reference belongs where?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C1" value="A"><span>A. Project knowledge</span></label>
+            <label><input type="radio" name="q-C1" value="B"><span>B. A shared Skill</span></label>
+            <label><input type="radio" name="q-C1" value="C"><span>C. Project instructions</span></label>
+            <label><input type="radio" name="q-C1" value="D"><span>D. A connector</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Skills &amp; Connectors">
+          <header class="q-head"><span class="qnum">C2</span><span class="badge">Skills &amp; Connectors</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">An office's required section order is stored in its own Skill, but agents keep using an older order. What is the right fix?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C2" value="A"><span>A. Edit and re-upload the Skill</span></label>
+            <label><input type="radio" name="q-C2" value="B"><span>B. Start a new chat and repeat the instruction</span></label>
+            <label><input type="radio" name="q-C2" value="C"><span>C. Put the order in Project knowledge instead</span></label>
+            <label><input type="radio" name="q-C2" value="D"><span>D. Add a connector</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Fluency">
+          <header class="q-head"><span class="qnum">C3</span><span class="badge">Fluency</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">A request is vague and the person who owns it is unreachable. What should you do first?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C3" value="A"><span>A. Make a reasonable guess and deliver</span></label>
+            <label><input type="radio" name="q-C3" value="B"><span>B. List report, reader, frequency, data and format, and hold open items</span></label>
+            <label><input type="radio" name="q-C3" value="C"><span>C. Hand it to a web agent</span></label>
+            <label><input type="radio" name="q-C3" value="D"><span>D. Wait indefinitely</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="easy" data-topic="Governance">
+          <header class="q-head"><span class="qnum">C4</span><span class="badge">Governance</span><span class="badge lvl easy">Easy</span></header>
+          <p class="q-text">Someone opens a free online tool with a customer list visible, closes it before pasting anything, and reports it. What is this?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C4" value="A"><span>A. A near miss — report it</span></label>
+            <label><input type="radio" name="q-C4" value="B"><span>B. An incident — data was exposed</span></label>
+            <label><input type="radio" name="q-C4" value="C"><span>C. Nothing — no data moved</span></label>
+            <label><input type="radio" name="q-C4" value="D"><span>D. A connector failure</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Just Delegate It">
+          <header class="q-head"><span class="qnum">C5</span><span class="badge">Just Delegate It</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">A workflow has a mandatory senior-editor gate. The review takes 20 minutes and the deadline window is 45 minutes. What should happen?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C5" value="A"><span>A. Send to the senior editor now for the 20-minute review</span></label>
+            <label><input type="radio" name="q-C5" value="B"><span>B. Skip the gate to meet the deadline</span></label>
+            <label><input type="radio" name="q-C5" value="C"><span>C. Send after the window closes</span></label>
+            <label><input type="radio" name="q-C5" value="D"><span>D. Let the agent self-approve</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="hard" data-topic="General Agents on the Web">
+          <header class="q-head"><span class="qnum">C6</span><span class="badge">General Agents on the Web</span><span class="badge lvl hard">Hard</span></header>
+          <p class="q-text">An agent summary says a notice was “emailed and posted”, but no email or posting connector exists. What should you conclude?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C6" value="A"><span>A. It is a sentence, not an event — check the inbox/page, then do it yourself</span></label>
+            <label><input type="radio" name="q-C6" value="B"><span>B. The agent did it through a hidden capability</span></label>
+            <label><input type="radio" name="q-C6" value="C"><span>C. Ask the connector to send it now</span></label>
+            <label><input type="radio" name="q-C6" value="D"><span>D. Assume it happened and move on</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="hard" data-topic="Governance">
+          <header class="q-head"><span class="qnum">C7</span><span class="badge">Governance</span><span class="badge lvl hard">Hard</span></header>
+          <p class="q-text">A Drive connector currently reaches the whole shared drive, but every actual run uses one project folder. What is the least-privilege change?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C7" value="A"><span>A. Shrink the connector to the folder the runs actually used</span></label>
+            <label><input type="radio" name="q-C7" value="B"><span>B. Keep it broad for future flexibility</span></label>
+            <label><input type="radio" name="q-C7" value="C"><span>C. Remove all connectors</span></label>
+            <label><input type="radio" name="q-C7" value="D"><span>D. Add send permission while you are there</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Workflow">
+          <header class="q-head"><span class="qnum">C8</span><span class="badge">Workflow</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">A clerk is the only person checking a collaborative step. If the clerk leaves, that step quietly becomes automated. What should the workflow review check?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C8" value="A"><span>A. That a human still judges each gate, with a named owner</span></label>
+            <label><input type="radio" name="q-C8" value="B"><span>B. That more steps are automated</span></label>
+            <label><input type="radio" name="q-C8" value="C"><span>C. Nothing — checks are not part of workflow design</span></label>
+            <label><input type="radio" name="q-C8" value="D"><span>D. That logs are deleted</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="easy" data-topic="Fluency">
+          <header class="q-head"><span class="qnum">C9</span><span class="badge">Fluency</span><span class="badge lvl easy">Easy</span></header>
+          <p class="q-text">A stakeholder cannot say what they want until they see it. What is the best approach?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C9" value="A"><span>A. Write a full specification first</span></label>
+            <label><input type="radio" name="q-C9" value="B"><span>B. Build a first version, show it, then refine from feedback</span></label>
+            <label><input type="radio" name="q-C9" value="C"><span>C. Delegate the decision to a web agent</span></label>
+            <label><input type="radio" name="q-C9" value="D"><span>D. Create a new connector</span></label>
+          </fieldset>
+        </article>
+
+        <article class="q" data-difficulty="medium" data-topic="Skills &amp; Connectors">
+          <header class="q-head"><span class="qnum">C10</span><span class="badge">Skills &amp; Connectors</span><span class="badge lvl medium">Medium</span></header>
+          <p class="q-text">A connector can search and read but cannot send. What is the correct division of work?</p>
+          <fieldset class="options"><legend>Choose one</legend>
+            <label><input type="radio" name="q-C10" value="A"><span>A. Permissions can be changed to add sending</span></label>
+            <label><input type="radio" name="q-C10" value="B"><span>B. Claude drafts and the human sends</span></label>
+            <label><input type="radio" name="q-C10" value="C"><span>C. The connector sends automatically after a read</span></label>
+            <label><input type="radio" name="q-C10" value="D"><span>D. Connectors are write-only tools</span></label>
+          </fieldset>
+        </article>
+      </div>
+    </section>
+
+    <section id="answer-key" class="block">
+      <div class="section-head">
+        <span class="kicker">At the end — not before</span>
+        <h2>Answer key &amp; explanations</h2>
+      </div>
+      <div class="answer-lock" id="answerLock">
+        <p>Answers stay hidden while you practise. Select an option for every question first, then reveal the key.</p>
+        <p class="progress-line"><span id="progressCount">0</span> of 22 answered</p>
+        <button type="button" id="revealBtn" class="btn">Reveal answer key</button>
+      </div>
+      <div class="answers" id="answers" hidden>
+        <article class="answer"><h3>T1 — A</h3><p>Steps 1 and 3 produce a draft that a named person reviews. Steps 2 and 4 end in a final decision or ledger update with nobody judging afterwards, so they stay human.</p></article>
+        <article class="answer"><h3>T2 — C</h3><p>North 10,000 ÷ 40 = $250/person; South 7,500 ÷ 25 = $300; East 7,000 ÷ 35 = $200. South is highest, North is 40 of 100, and 24,500 ÷ 100 = $245. Only statement 3 is wrong: East spent $7,000, not $7,500.</p></article>
+        <article class="answer"><h3>T3 — B</h3><p>Before: 60 × 2.5 = 150 h. After: 60 × (1 + 0.5) = 90 h. Saved = 60 h → 60 × $30 = $1,800 gross. Net = $1,800 − $500 = <strong>$1,300</strong>. A mistakes the “after” hours for savings; C forgets the tool cost.</p></article>
+        <article class="answer"><h3>T4 — B</h3><p>Time, hand steps and corrections each have a record. No earlier versions were kept, so revision rounds cannot be verified — it is an estimate.</p></article>
+        <article class="answer"><h3>T5 — B</h3><p>321 lines − 1 header = 320 rows, so the row count is fine. Lapsed rows carrying amounts can inflate a monthly total; the $350 gap plus “no error” is not proof of correctness. Ask for the rows behind December. Report an incident only if data actually left an approved tool.</p></article>
+        <article class="answer"><h3>Q1 — A</h3><p>Small financial impact = low stakes; an easy follow-up = reversible. That box needs only a light check. Remember this 2×2 is a practice construct, not a course framework.</p></article>
+        <article class="answer"><h3>Q2 — B</h3><p>High impact and impossible to undo = high stakes + irreversible. A human must approve before the send; checking afterwards is too late.</p></article>
+        <article class="answer"><h3>Q3 — C</h3><p>Vague + unreachable owner means you cannot resolve the ambiguity yourself. Write down report, reader, frequency, data and format, and hold the open items for confirmation.</p></article>
+        <article class="answer"><h3>P1 — C</h3><p>200/800 = 25% (statement 1 ok). 75% × 200 = 150 (2 ok). 150/800 ≈ 19% (4 ok). Non-users were never asked, so no comparison with them is possible — statement 3 is unsupported.</p></article>
+        <article class="answer"><h3>P2 — B</h3><p>1,240 ÷ 1,300 = 95.38% ≈ 95.4%. A decision must rest on a computed figure with a readable method, not a paragraph saying “about 98%”. A suspiciously round or too-exact headline is a warning sign.</p></article>
+        <article class="answer"><h3>P3 — A</h3><p>Difference = 4.5 − 3 = <strong>1.5 percentage points</strong>. Relative change = 1.5 ÷ 3 = 0.5 = <strong>+50%</strong>. Percent vs percentage points is the classic trap.</p></article>
+        <article class="answer"><h3>P4 — A</h3><p>Review cost = 10 × $40 = $400. Net = $2,400 − $900 − $400 = <strong>$1,100</strong>. Forgetting the review column gives B; forgetting the tool cost gives C.</p></article>
+        <article class="answer"><h3>C1 — A</h3><p>Reference material such as a site map goes in Project knowledge. A procedure goes in a Skill; a rule goes in Project instructions.</p></article>
+        <article class="answer"><h3>C2 — A</h3><p>The section order lives in the office's own Skill. Edit and re-upload that Skill — repeating it in chat only patching one conversation.</p></article>
+        <article class="answer"><h3>C3 — B</h3><p>With the owner unreachable, capture report, reader, frequency, data and format and hold the open items. Guessing risks a polished but wrong deliverable.</p></article>
+        <article class="answer"><h3>C4 — A</h3><p>Nothing was pasted, so no incident occurred — but the exposure was only avoided by chance. That is a near miss, and it should be reported so the risk is fixed.</p></article>
+        <article class="answer"><h3>C5 — A</h3><p>20 minutes fits inside the 45-minute window, so send it to the senior editor now. A mandatory gate cannot be skipped to save time.</p></article>
+        <article class="answer"><h3>C6 — A</h3><p>Without a sending connector, “emailed and posted” is just a claim in a summary. Verify in the inbox/page and do it yourself if needed.</p></article>
+        <article class="answer"><h3>C7 — A</h3><p>Least privilege means shrinking the connector to the folder actually used. Broad access “just in case” is exactly what least privilege avoids.</p></article>
+        <article class="answer"><h3>C8 — A</h3><p>Checks must be part of the design with a named human owner. If the only checker leaves and nobody notices, a collaborative step has silently become automated.</p></article>
+        <article class="answer"><h3>C9 — B</h3><p>When the requirement cannot be described in advance, build a small first version, show it, gather feedback and refine: build → show → refine.</p></article>
+        <article class="answer"><h3>C10 — B</h3><p>Connector actions are limited to search/read. Claude drafts the message; a human performs the send.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap"><p>Practice bank generated from your quiz, MCQs and study notes · New questions, same concepts · Answers withheld until revealed.</p></div>
+  </footer>
+
+  <script>
+    const filters = document.querySelectorAll('.filter');
+    const questions = document.querySelectorAll('.q');
+    const progressCount = document.getElementById('progressCount');
+    const answers = document.getElementById('answers');
+    const answerLock = document.getElementById('answerLock');
+
+    function updateProgress() {
+      progressCount.textContent = document.querySelectorAll('.options input:checked').length;
+    }
+
+    filters.forEach(button => {
+      button.addEventListener('click', () => {
+        filters.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        const level = button.dataset.filter;
+        questions.forEach(q => {
+          q.hidden = level !== 'all' && q.dataset.difficulty !== level;
+        });
+      });
+    });
+
+    document.querySelectorAll('.options input').forEach(input => {
+      input.addEventListener('change', updateProgress);
+    });
+
+    document.getElementById('revealBtn').addEventListener('click', () => {
+      answers.hidden = false;
+      answerLock.hidden = true;
+      answers.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+  </script>
+</body>
+</html>
